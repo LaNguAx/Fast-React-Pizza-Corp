@@ -1,5 +1,12 @@
-export default function App() {
-  const x = 23;
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./ui/Home";
+import Menu from "./features/menu/Menu";
 
-  return <div>Hello vite</div>;
+const router = createBrowserRouter([
+  { path: "/", element: <Home /> },
+  { path: "/menu", element: <Menu /> },
+]);
+
+export default function App() {
+  return <RouterProvider router={router} />;
 }
